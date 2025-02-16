@@ -30,4 +30,4 @@ if __name__ == "__main__":
 
     # 二分查找（双闭区间）
     index = binary_search(nums, target)
-    print("目标元素 6 的索引 = ", index)
+    print("目标元素 6 的索引 = ", index)  
