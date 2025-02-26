@@ -6,7 +6,7 @@ class TreeNode():
     def __init__(self, val: int):
         self.val = val
         self.left: TreeNode | None = None
-        self.right: TreeNode | None = None
+        self.right
 
 
 def dfs(preorder: list[int], 
