@@ -49,4 +49,4 @@ def backtrack(state: State, choices: list[choice], res: list[state]):
     if is_solution(state):
         record()
         return
-    for choice
+    for choice in range
