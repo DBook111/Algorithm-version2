@@ -29,23 +29,34 @@ def overlay_images(image, color_label, alpha=0.6):
 # Example usage
 if __name__ == "__main__":
     # Load the single-channel medical image and label image
-    image = cv2.imread(r'C:\Yan3\Algorithm-version2\Painting\DukeDME\image.png', cv2.IMREAD_GRAYSCALE)
-    label = cv2.imread(r'C:\Yan3\Algorithm-version2\Painting\DukeDME\new_label.png', cv2.IMREAD_GRAYSCALE)
+    image = cv2.imread(r'C:\Yan3\Algorithm-version2\Painting\RETOUCH\Topcon\image.png'
+                       , cv2.IMREAD_GRAYSCALE)
+    label = cv2.imread(r'C:\Yan3\Algorithm-version2\Painting\RETOUCH\Topcon\new_label.png'
+                       , cv2.IMREAD_GRAYSCALE)
     
     # Define a custom palette (example with 3 classes)
     palette = np.array([
-                        [0, 0, 0],
+                        [0, 0, 0],                                    
+                        [255, 204, 0],   # 中蓝
+                        [255, 153, 204],
+                        [255, 102, 51], # 深蓝
+
+
+
                         [255, 153, 204],
                         [153, 204, 255],
-                        [204, 204, 51], # 浅蓝
-                        [193, 182, 255], # 浅粉
-                        [0, 204, 153],  # 深绿                                              
-                        [0, 204, 255],  # 浅黄                                           
                         [0, 102, 255],   # 橘色
-                        [255, 102, 51], # 深蓝
-                        [255, 204, 0],   # 中蓝                     
                         [152, 102, 102], # 灰色
-                        [0, 153, 155], # 绿色                      
+                        [255, 102, 51], # 深蓝 
+                        [255, 204, 0],   # 中蓝 
+
+                        [204, 204, 51], # 浅蓝 
+                        [0, 153, 155], # 绿色 
+                        [0, 204, 255],  # 浅黄
+                        [152, 102, 102], # 灰色
+                        [193, 182, 255], # 浅粉                  
+                        [0, 204, 153],  # 深绿 
+                        [0, 102, 255],   # 橘色                                        
                         ], 
                         dtype=np.uint8)
     
@@ -59,4 +70,5 @@ if __name__ == "__main__":
     weighted_image = overlay_images(image_color, color_label, alpha=0.7)
     
     # Save the result
-    cv2.imwrite(r'C:\Yan3\Algorithm-version2\Painting\DukeDME\weight.png', weighted_image)
+    cv2.imwrite(r'C:\Yan3\Algorithm-version2\Painting\RETOUCH\Topcon\Topcon_weight.png'
+                , weighted_image)

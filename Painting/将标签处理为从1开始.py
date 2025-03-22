@@ -2,7 +2,8 @@ import cv2
 import numpy as np
 
 # 读取单通道标签图像
-image = cv2.imread(r'C:\Yan3\Algorithm-version2\Painting\DukeDME\label.png', cv2.IMREAD_GRAYSCALE)
+image = cv2.imread(r'C:\Yan3\Algorithm-version2\Painting\RETOUCH\Topcon\label.png'
+                   , cv2.IMREAD_GRAYSCALE)
 
 # 获取图像中的唯一像素值
 unique_values = np.unique(image)
@@ -16,4 +17,5 @@ for original_value, new_value in value_map.items():
     new_image[image == original_value] = new_value
 
 # 保存处理后的图像
-cv2.imwrite(r"C:\Yan3\Algorithm-version2\Painting\DukeDME\new_label.png", new_image)
+cv2.imwrite(r"C:\Yan3\Algorithm-version2\Painting\RETOUCH\Topcon\new_label.png"
+            , new_image)
