@@ -150,29 +150,32 @@ sobelz_industry_cropped_2 = sobelz_industry_2[crop_size:-crop_size, crop_size:-c
 # ssim_z_2 = ssim(sobelz_cropped, sobelz_industry_cropped_2, data_range=sobelz_cropped.max() - sobelz_industry_cropped_2.min())
 
 # 合并六个数组
-combined_sobel = np.stack((sobelx_industry_cropped_1, 
-                           sobely_industry_cropped_1,
-                           sobelz_industry_cropped_1,
-                           sobelx_industry_cropped_2,
-                           sobely_industry_cropped_2,
-                           sobelz_industry_cropped_2), axis=-1)
+# combined_sobel = np.stack((sobelx_industry_cropped_1, 
+#                            sobely_industry_cropped_1,
+#                            sobelz_industry_cropped_1,
+#                            sobelx_industry_cropped_2,
+#                            sobely_industry_cropped_2,
+#                            sobelz_industry_cropped_2), axis=-1)
 
 # 将结果归一化到 0-255 范围
 normalized_sobelx = cv2.normalize(sobelx_cropped, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
 normalized_sobely = cv2.normalize(sobely_cropped, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
 normalized_sobelz = cv2.normalize(sobelz_cropped, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
 
-# normalized_sobelx_industry = cv2.normalize(sobelx_industry_cropped, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
-# normalized_sobely_industry = cv2.normalize(sobely_industry_cropped, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
-# normalized_sobelz_industry = cv2.normalize(sobelz_industry_cropped, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
-normalized_combined_sobel = cv2.normalize(combined_sobel, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
+normalized_sobelx_industry_1 = cv2.normalize(sobelx_industry_cropped_1, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
+normalized_sobely_industry_1 = cv2.normalize(sobely_industry_cropped_1, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
+normalized_sobelz_industry_1 = cv2.normalize(sobelz_industry_cropped_1, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
+normalized_sobelx_industry_2 = cv2.normalize(sobelx_industry_cropped_2, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
+normalized_sobely_industry_2 = cv2.normalize(sobely_industry_cropped_2, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
+normalized_sobelz_industry_2 = cv2.normalize(sobelz_industry_cropped_2, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
 
-normalized_sobelx_industry_1 = normalized_combined_sobel[..., 0]
-normalized_sobely_industry_1 = normalized_combined_sobel[..., 1]
-normalized_sobelz_industry_1 = normalized_combined_sobel[..., 2]
-normalized_sobelx_industry_2 = normalized_combined_sobel[..., 3]
-normalized_sobely_industry_2 = normalized_combined_sobel[..., 4]
-normalized_sobelz_industry_2 = normalized_combined_sobel[..., 5]
+# normalized_combined_sobel = cv2.normalize(combined_sobel, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
+# normalized_sobelx_industry_1 = normalized_combined_sobel[..., 0]
+# normalized_sobely_industry_1 = normalized_combined_sobel[..., 1]
+# normalized_sobelz_industry_1 = normalized_combined_sobel[..., 2]
+# normalized_sobelx_industry_2 = normalized_combined_sobel[..., 3]
+# normalized_sobely_industry_2 = normalized_combined_sobel[..., 4]
+# normalized_sobelz_industry_2 = normalized_combined_sobel[..., 5]
 
 # # 计算 结构相似性指数ssim
 # ssim_x_1 = ssim(normalized_sobelx, normalized_sobelx_industry_1, data_range=normalized_sobelx.max() - normalized_sobelx.min())
@@ -182,12 +185,12 @@ normalized_sobelz_industry_2 = normalized_combined_sobel[..., 5]
 # ssim_y_2 = ssim(normalized_sobely, normalized_sobely_industry_2, data_range=normalized_sobely.max() - normalized_sobely.min())
 # ssim_z_2 = ssim(normalized_sobelz, normalized_sobelz_industry_2, data_range=normalized_sobelz.max() - normalized_sobelz.min())
 
-ssim_x_1 = ssim(normalized_sobelx, normalized_sobelx_industry_1, data_range=normalized_combined_sobel.max() - normalized_combined_sobel.min())
-ssim_y_1 = ssim(normalized_sobely, normalized_sobely_industry_1, data_range=normalized_combined_sobel.max() - normalized_combined_sobel.min())
-ssim_z_1 = ssim(normalized_sobelz, normalized_sobelz_industry_1, data_range=normalized_combined_sobel.max() - normalized_combined_sobel.min())
-ssim_x_2 = ssim(normalized_sobelx, normalized_sobelx_industry_2, data_range=normalized_combined_sobel.max() - normalized_combined_sobel.min())
-ssim_y_2 = ssim(normalized_sobely, normalized_sobely_industry_2, data_range=normalized_combined_sobel.max() - normalized_combined_sobel.min())
-ssim_z_2 = ssim(normalized_sobelz, normalized_sobelz_industry_2, data_range=normalized_combined_sobel.max() - normalized_combined_sobel.min())
+ssim_x_1 = ssim(normalized_sobelx, normalized_sobelx_industry_1, data_range=normalized_sobelx_industry_1.max() - normalized_sobelx_industry_1.min())
+ssim_y_1 = ssim(normalized_sobely, normalized_sobely_industry_1, data_range=normalized_sobely_industry_1.max() - normalized_sobely_industry_1.min())
+ssim_z_1 = ssim(normalized_sobelz, normalized_sobelz_industry_1, data_range=normalized_sobelz_industry_1.max() - normalized_sobelz_industry_1.min())
+ssim_x_2 = ssim(normalized_sobelx, normalized_sobelx_industry_2, data_range=normalized_sobelx_industry_2.max() - normalized_sobelx_industry_2.min())
+ssim_y_2 = ssim(normalized_sobely, normalized_sobely_industry_2, data_range=normalized_sobely_industry_2.max() - normalized_sobely_industry_2.min())
+ssim_z_2 = ssim(normalized_sobelz, normalized_sobelz_industry_2, data_range=normalized_sobelz_industry_2.max() - normalized_sobelz_industry_2.min())
 
 
 # # 将结果归一化到 0-255 范围
