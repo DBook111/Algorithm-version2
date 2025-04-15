@@ -37,6 +37,6 @@ def delete_pages_from_pdf(input_path, output_path, pages_to_delete):
 # 使用示例
 if __name__ == "__main__":
     # 示例：删除第2, 4, 6页
-    input_pdf = ""
-    output_pdf = ""
-    delete_pages_from_pdf(input_pdf, output_pdf, [11])
+    input_pdf = r"C:\Yan3\大论文\我的写作\送盲审\226142168_周稚麟_智能技术学部_计算机科学与信息工程学院.pdf"
+    output_pdf = r"C:\Yan3\大论文\我的写作\送盲审\226142168_周稚麟_智能技术学部_计算机科学与信息工程学院_1.pdf"
+    delete_pages_from_pdf(input_pdf, output_pdf, [2, 4, 6, 14])
