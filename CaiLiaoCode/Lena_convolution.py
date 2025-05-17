@@ -53,59 +53,6 @@ sobel_kernel_z_industry_2 = np.array([[1.75e-10, 1.75e-10, 1.75e-10],
                            [1.75e-10, 1.75e-10, -1.80e-10]], dtype=np.float32)
 
 
-# # 3
-# sobel_kernel_x_industry = np.array([[1.125e-9, 2.3731e-11, -1.125e-9],
-#                            [1.125e-9, 2.3731e-11, -1.125e-9],
-#                            [1.125e-9, 2.3731e-11, -1.125e-9]], dtype=np.float32)
-
-# sobel_kernel_y_industry = np.array([[1.125e-9, 1.125e-9, 1.125e-9],
-#                            [2.3731e-11, 2.3731e-11, 2.3731e-11],
-#                            [-1.125e-9, -1.125e-9, -1.125e-9]], dtype=np.float32)
-
-# sobel_kernel_z_industry =  np.array([[2.3731e-11, 2.3731e-11, 2.3731e-11],
-#                            [2.3731e-11, 1.125e-9, 2.3731e-11],
-#                            [2.3731e-11, 2.3731e-11, -1.125e-9]], dtype=np.float32)
-
-# # 4
-# sobel_kernel_x_industry = np.array([[1.771e-9, 2.3731e-11, -1.771e-9],
-#                            [1.771e-9, 2.3731e-11, -1.771e-9],
-#                            [1.771e-9, 2.3731e-11, -1.771e-9]], dtype=np.float32)
-
-# sobel_kernel_y_industry = np.array([[1.771e-9, 1.771e-9, 1.771e-9],
-#                            [2.3731e-11, 2.3731e-11, 2.3731e-11],
-#                            [-1.771e-9, -1.771e-9, -1.771e-9]], dtype=np.float32)
-
-# sobel_kernel_z_industry =  np.array([[2.3731e-11, 2.3731e-11, 2.3731e-11],
-#                            [2.3731e-11, 1.771e-9, 2.3731e-11],
-#                            [2.3731e-11, 2.3731e-11, -1.771e-9]], dtype=np.float32)
-
-# # 5
-# sobel_kernel_x_industry = np.array([[2.161e-9, 2.3731e-11, -2.161e-9],
-#                            [2.161e-9, 2.3731e-11, -2.161e-9],
-#                            [2.161e-9, 2.3731e-11, -2.161e-9]], dtype=np.float32)
-
-# sobel_kernel_y_industry = np.array([[2.161e-9, 2.161e-9, 2.161e-9],
-#                            [2.3731e-11, 2.3731e-11, 2.3731e-11],
-#                            [-2.161e-9, -2.161e-9, -2.161e-9]], dtype=np.float32)
-
-# sobel_kernel_z_industry =  np.array([[2.3731e-11, 2.3731e-11, 2.3731e-11],
-#                            [2.3731e-11, 2.161e-9, 2.3731e-11],
-#                            [2.3731e-11, 2.3731e-11, -2.161e-9]], dtype=np.float32)
-
-# # 6
-# sobel_kernel_x_industry = np.array([[2.161e-9, 2.3731e-11, -2.161e-9],
-#                            [2.161e-9, 2.3731e-11, -2.161e-9],
-#                            [2.161e-9, 2.3731e-11, -2.161e-9]], dtype=np.float32)
-
-# sobel_kernel_y_industry = np.array([[2.161e-9, 2.161e-9, 2.161e-9],
-#                            [2.3731e-11, 2.3731e-11, 2.3731e-11],
-#                            [-2.161e-9, -2.161e-9, -2.161e-9]], dtype=np.float32)
-
-# sobel_kernel_z_industry =  np.array([[2.3731e-11, 2.3731e-11, 2.3731e-11],
-#                            [2.3731e-11, 2.161e-9, 2.3731e-11],
-#                            [2.3731e-11, 2.3731e-11, -2.161e-9]], dtype=np.float32)
-
-
 # 使用自定义卷积核计算梯度
 sobelx = cv2.filter2D(img, cv2.CV_64F, sobel_kernel_x)
 sobely = cv2.filter2D(img, cv2.CV_64F, sobel_kernel_y)
