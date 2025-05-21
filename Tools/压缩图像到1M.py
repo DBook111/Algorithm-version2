@@ -124,7 +124,7 @@ def compress_image_to_1mb(input_path, output_path=None):
 
 if __name__ == "__main__":
     # 直接指定输入和输出路径
-    input_path = r"C:\Yan1\TeacherFellow\CaoGuogang\2025年度中国发明协会“发明创业奖”评选\材料\论文.png"
+    input_path = r"C:\Yan3\大论文\盲审后要提交的\论文+专利材料\用于oa提交\专利.jpg"
     output_path = None  # 默认使用原文件名+_compressed，或指定为"output.jpg"
     
     if not os.path.exists(input_path):
