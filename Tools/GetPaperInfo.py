@@ -202,17 +202,8 @@ def main():
             "https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=Joint+Modeling+of+Image+and+Label+Statistics+for+Enhancing+Model+Generalizability+of+Medical+Image+Segmentation&btnG="
         ]
     
-    if not args.quiet:
-        print("Google学术论文信息提取工具")
-        print("=" * 40)
-    
     for url in urls:
-        if not args.quiet:
-            print(f"\n处理链接: {url}")
-            print("正在获取论文信息...")
-        
         paper_info = get_paper_info(url)
-        
         if paper_info:
             # 生成markdown格式
             markdown_content = generate_markdown(paper_info)
@@ -223,24 +214,24 @@ def main():
                 print(markdown_content)
             
             # 确定输出文件名
-            if args.output:
-                filename = args.output
-            elif 'title' in paper_info:
-                # 使用论文标题的前20个字符作为文件名
-                safe_title = "".join(c for c in paper_info['title'][:20] if c.isalnum() or c.isspace()).strip()
-                safe_title = safe_title.replace(" ", "_")
-                filename = f"{safe_title}.md"
-            else:
-                filename = "paper_info.md"
+            # if args.output:
+            #     filename = args.output
+            # elif 'title' in paper_info:
+            #     # 使用论文标题的前20个字符作为文件名
+            #     safe_title = "".join(c for c in paper_info['title'][:20] if c.isalnum() or c.isspace()).strip()
+            #     safe_title = safe_title.replace(" ", "_")
+            #     filename = f"{safe_title}.md"
+            # else:
+            #     filename = "paper_info.md"
             
-            # 如果处理多个URL并使用自定义输出名称，添加序号
-            if args.output and len(urls) > 1:
-                name, ext = os.path.splitext(filename)
-                filename = f"{name}_{urls.index(url) + 1}{ext}"
+            # # 如果处理多个URL并使用自定义输出名称，添加序号
+            # if args.output and len(urls) > 1:
+            #     name, ext = os.path.splitext(filename)
+            #     filename = f"{name}_{urls.index(url) + 1}{ext}"
             
-            save_markdown_to_file(markdown_content, filename)
-            if not args.quiet:
-                print(f"已保存到文件: {filename}")
+            # save_markdown_to_file(markdown_content, filename)
+            # if not args.quiet:
+            #     print(f"已保存到文件: {filename}")
         else:
             if not args.quiet:
                 print("无法获取论文信息，请检查链接是否正确。")
