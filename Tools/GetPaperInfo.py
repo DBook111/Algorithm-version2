@@ -199,7 +199,7 @@ def main():
         if not args.quiet:
             print("未提供URLs，使用默认示例链接...")
         urls = [
-            "https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=Joint+Modeling+of+Image+and+Label+Statistics+for+Enhancing+Model+Generalizability+of+Medical+Image+Segmentation&btnG="
+            "https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=+BayeSeg%3A+Bayesian+Modeling+for+Medical+Image+Segmentation+with+Interpretable++Generalizability&btnG="
         ]
     
     for url in urls:

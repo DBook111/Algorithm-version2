@@ -123,15 +123,22 @@ def compress_image_to_1mb(input_path, output_path=None):
     return output_path
 
 if __name__ == "__main__":
+    folder_path = r"C:\Yan1\TeacherFellow\CaoGuogang\2025年度中国发明协会“发明创业奖”评选\查新报告\专利查新报告"
+    output_folder = r"C:\Yan1\TeacherFellow\CaoGuogang\2025年度中国发明协会“发明创业奖”评选\查新报告\专利查新报告"
+    for file in os.listdir(folder_path):
+        if file.endswith(('.jpg', '.jpeg')):
+            input_path = os.path.join(folder_path, file)
+            output_path = os.path.join(output_folder, f"{file.split('.')[0]}_compressed.jpg")
+            compress_image_to_1mb(input_path, output_path)
     # 直接指定输入和输出路径
-    input_path = r"C:\Yan3\大论文\盲审后要提交的\论文+专利材料\用于oa提交\专利.jpg"
-    output_path = None  # 默认使用原文件名+_compressed，或指定为"output.jpg"
+    # input_path = r"C:\Yan3\大论文\盲审后要提交的\论文+专利材料\用于oa提交\专利.jpg"
+    # output_path = None  # 默认使用原文件名+_compressed，或指定为"output.jpg"
     
-    if not os.path.exists(input_path):
-        print(f"错误: 文件 '{input_path}' 不存在")
-    else:
-        try:
-            result_path = compress_image_to_1mb(input_path, output_path)
-            print(f"已保存到: {result_path}")
-        except Exception as e:
-            print(f"处理时出错: {e}")
+    # if not os.path.exists(input_path):
+    #     print(f"错误: 文件 '{input_path}' 不存在")
+    # else:
+    #     try:
+    #         result_path = compress_image_to_1mb(input_path, output_path)
+    #         print(f"已保存到: {result_path}")
+    #     except Exception as e:
+    #         print(f"处理时出错: {e}")
