@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from skimage.metrics import structural_similarity as ssim
 
-Combination_name = "Combination_4"
+Combination_name = "Combination_4" # Combination_1, Combination_2, Combination_3, Combination_4
 
 # img_path = r"C:\Yan3\Algorithm-version2\CaiLiaoCode\input\235_airplane.png"
 # img_path = r"C:\Yan3\Algorithm-version2\CaiLiaoCode\input\330_automobile.png"
@@ -47,7 +47,7 @@ if Combination_name == "Combination_1":
                             [1.80e-10,1.75e-10, -1.80e-10]], dtype=np.float32)
 
     sobel_kernel_y_industry_2 = np.array([[1.80e-10, 1.80e-10, 1.80e-10],
-                            [1.75e-11, 1.75e-11, 1.75e-11],
+                            [1.75e-10, 1.75e-10, 1.75e-10],
                             [-1.80e-10, -1.80e-10, -1.80e-10]], dtype=np.float32)
 
     sobel_kernel_z_industry_2 = np.array([[1.75e-10, 1.75e-10, 1.75e-10],
@@ -73,7 +73,7 @@ elif Combination_name == "Combination_2":
                            [2.16e-10,1.75e-10, -2.16e-10]], dtype=np.float32)
 
     sobel_kernel_y_industry_2 = np.array([[2.16e-10, 2.16e-10, 2.16e-10],
-                            [1.75e-11, 1.75e-11, 1.75e-11],
+                            [1.75e-10, 1.75e-10, 1.75e-10],
                             [-2.16e-10, -2.16e-10, -2.16e-10]], dtype=np.float32)
 
     sobel_kernel_z_industry_2 = np.array([[1.75e-10, 1.75e-10, 1.75e-10],
@@ -98,7 +98,7 @@ elif Combination_name == "Combination_3":
                            [6.04e-10,1.75e-10, -6.04e-10]], dtype=np.float32)
 
     sobel_kernel_y_industry_2 = np.array([[6.04e-10, 6.04e-10, 6.04e-10],
-                            [1.75e-11, 1.75e-11, 1.75e-11],
+                            [1.75e-10, 1.75e-10, 1.75e-10],
                             [-6.04e-10, -6.04e-10, -6.04e-10]], dtype=np.float32)
 
     sobel_kernel_z_industry_2 = np.array([[1.75e-10, 1.75e-10, 1.75e-10],
@@ -123,7 +123,7 @@ elif Combination_name == "Combination_4":
                            [1.06e-9,1.75e-10, -1.06e-9]], dtype=np.float32)
 
     sobel_kernel_y_industry_2 = np.array([[1.06e-9, 1.06e-9, 1.06e-9],
-                            [1.75e-11, 1.75e-11, 1.75e-11],
+                            [1.75e-10, 1.75e-10, 1.75e-10],
                             [-1.06e-9, -1.06e-9, -1.06e-9]], dtype=np.float32)
 
     sobel_kernel_z_industry_2 = np.array([[1.75e-10, 1.75e-10, 1.75e-10],
